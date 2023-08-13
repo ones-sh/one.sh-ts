@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "sdk",
+    "extends": "./base.json",
+    "compilerOptions": {
+        "module": "ES2020",
+        "strict": true,
+        "outDir": "./dist",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "rootDir": "./src",
+        "target": "es6",
+        "lib": ["es2015", "DOM", "ES2021.String"],
+        "types": [],
+        "declaration": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true
+    },
+    "compileOnSave": true
+}
+

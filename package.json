@@ -1,18 +1,47 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "prettier": "^2.5.1",
-    "turbo": "latest"
-  },
-  "packageManager": "pnpm@8.6.10",
-  "name": "one.sh"
+    "private": true,
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "lint": "turbo run lint",
+        "format": "turbo run lint:fix",
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "babel-plugin-transform-remove-console": "^6.9.4",
+        "eslint": "^8.33.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-import": "^2.26.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.3",
+        "turbo": "latest",
+        "typescript": "latest"
+    },
+    "workspaces": [
+        "packages/*",
+        "apps/*"
+    ],
+    "packageManager": "pnpm@8.6.10",
+    "name": "one.sh",
+    "author": {
+        "email": "pandaronit25@gmail.com",
+        "name": "Ronit Panda",
+        "url": "https://www.linkedin.com/in/rtpa25"
+    },
+    "license": "MIT",
+    "description": "This will be a one stop shop for all developer products. Which will enable you to spin up to a payment provider, email provider and many more. No more reading random docs, No more keeping track of multiple services/payments, No more management of multiple API keys",
+    "lint-staged": {
+        "(apps|packages)/**/*.{js,ts,jsx,tsx}": [
+            "prettier --write",
+            "eslint --fix"
+        ],
+        "*.json": [
+            "prettier --write"
+        ]
+    }
 }

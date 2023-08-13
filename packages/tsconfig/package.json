@@ -1,9 +1,15 @@
 {
-  "name": "tsconfig",
-  "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "tsconfig",
+    "version": "0.0.0",
+    "private": true,
+    "files": [
+        "base.json",
+        "nextjs.json",
+        "react-library.json"
+    ],
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    }
 }
+
